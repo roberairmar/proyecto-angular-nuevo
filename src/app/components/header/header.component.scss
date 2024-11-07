@@ -1,0 +1,36 @@
+@use "./../../../../public/styles/colores.scss/colores.scss";
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 2px solid #333;
+  
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .user-actions {
+    display: flex;
+    align-items: center;
+    
+    a {
+      margin-right: 20px;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+
+      &.activa {
+        color: #3ba243;
+      }
+    }
+  }
+
+  .parking-logo {
+    width: 150px;
+    height: auto;
+  }
+}

@@ -1,0 +1,21 @@
+<app-header></app-header>
+<main>
+  <table class="tabla">
+      <thead>
+        <tr>
+          <th>Nro</th>
+          <th>Mes</th>
+          <th>Usos</th>
+          <th>Cobrado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reporte of reporteEstacionamientos; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ reporte.mes }}</td>
+          <td>{{ reporte.usos }}</td>
+          <td>{{ reporte.cobrado | currency:'ARS' }}</td>
+        </tr>
+      </tbody>
+    </table> 
+  </main>

@@ -1,0 +1,19 @@
+<div id="login-container">
+  <div id="izquierda">
+    <div id="logo-container">
+      <img src="/IMG/Login-parking.png" alt="Parking Logo login" class="parking-logo-login">
+    </div>
+  </div>
+  <div id="derecha">
+    <form id="login-form" (ngSubmit)="Login()">
+      <div class="form-group">
+        <input type="text" name="usuario" placeholder="Usuario" [(ngModel)]="username">
+      </div>
+      <div class="form-group">
+        <input type="password" name="contrasena" placeholder="Contraseña" [(ngModel)]="password">
+      </div>
+      <button type="button" class="login-button" (click)="Login()">INICIAR SESIÓN</button>
+      <a href="#" class="register-link">o Registrarse</a>
+    </form>
+  </div>
+</div>

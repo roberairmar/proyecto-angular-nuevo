@@ -1,0 +1,37 @@
+main {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+
+  .tabla {
+    width: 80%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+
+    th, td {
+      border: 1px solid #000;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #333;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    td {
+      font-size: 16px;
+    }
+  }
+}
+
+// Estilo para el botón de cerrar sesión
+a[routerLink="/login"] {
+  color: #000;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-top: 10px;
+  display: block;
+}

@@ -1,0 +1,184 @@
+$color-primary: #000000;
+$color-secondary: #ecf0f1;
+$color-success: #27ae60;
+$color-danger: #e74c3c;
+$color-warning: #f39c12;
+$color-background: #ffffff;
+$border-radius: 4px;
+
+.estado-cocheras {
+  min-height: 100vh;
+  background-color: $color-background;
+  position: relative;
+  padding: 20px;
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+
+  .tabla-container {
+    background-color: $color-background;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+
+  .tabla {
+    width: 100%;
+    border-collapse: collapse;
+
+    .header-tabla {
+      display: grid;
+      grid-template-columns: 80px 1fr 180px 200px;
+      background-color: #f8f9fa;
+      border-bottom: 2px solid #dee2e6;
+
+      div {
+        padding: 15px;
+        font-weight: 600;
+        color: $color-primary;
+        font-size: 1rem;
+      }
+    }
+
+    .tabla-body {
+      .fila {
+        display: grid;
+        grid-template-columns: 80px 1fr 180px 200px;
+        border-bottom: 1px solid #dee2e6;
+        align-items: center;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        > div {
+          padding: 12px 15px;
+        }
+      }
+    }
+  }
+
+  .celda-numero {
+    font-weight: 500;
+    color: $color-primary;
+  }
+
+  .celda-disponibilidad {
+    .patente-button {
+      background: none;
+      border: none;
+      color: $color-primary;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 8px 16px;
+      border-radius: $border-radius;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    .estado-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: $border-radius;
+      font-weight: 500;
+      text-align: center;
+      
+      &.disponible {
+        background-color: $color-success;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: auto;
+        
+        &:hover {
+          background-color: darken($color-success, 5%);
+        }
+      }
+      
+      &.no-disponible {
+        background-color: $color-danger;
+        color: white;
+      }
+    }
+  }
+
+  .celda-ingreso {
+    color: $color-primary;
+  }
+
+  .celda-acciones {
+    display: flex;
+    gap: 10px;
+    
+    .action-button {
+      background: none;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      border-radius: $border-radius;
+      
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+      
+      img {
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
+    }
+  }
+
+  .boton-agregar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .add-button {
+      background-color: $color-success;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: $border-radius;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: darken($color-success, 5%);
+      }
+    }
+  }
+
+  .logo-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    
+    .parking-logo {
+      width: 150px;
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .estado-cocheras {
+    .tabla {
+      .header-tabla,
+      .tabla-body .fila {
+        grid-template-columns: 60px 1fr 120px 120px;
+      }
+    }
+    
+    .celda-acciones {
+      flex-wrap: wrap;
+    }
+  }
+}

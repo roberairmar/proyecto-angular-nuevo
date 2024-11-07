@@ -1,0 +1,55 @@
+<div class="estado-cocheras">
+  <app-header></app-header>
+  <main>
+    <div class="tabla-container">
+      <div class="tabla">
+        <div class="header-tabla">
+          <div>N°</div>
+          <div>Disponibilidad</div>
+          <div>Ingreso</div>
+          <div>Acciones</div>
+        </div>
+        <div class="tabla-body">
+          <div class="fila" *ngFor="let cochera of filas">
+            <ng-container *ngIf="!cochera.eliminada">
+              <div class="celda-numero">{{ cochera.id }}</div>
+              <div class="celda-disponibilidad">
+                <ng-container *ngIf="cochera.activo; else notActive">
+                  <button class="patente-button" (click)="cerrarEstacionamientoModal(cochera.id)">
+                    {{ cochera.activo.patente }}
+                  </button>
+                </ng-container>
+                <ng-template #notActive>
+                  <ng-container *ngIf="cochera.deshabilitada; else available">
+                    <div class="estado-badge no-disponible">No disponible</div>
+                  </ng-container>
+                  <ng-template #available>
+                    <button class="estado-badge disponible" (click)="abrirModalEstacionarAuto(cochera.id)">
+                      Disponible
+                    </button>
+                  </ng-template>
+                </ng-template>
+              </div>
+              <div class="celda-ingreso">{{ cochera.activo?.horaIngreso }}</div>
+              <div class="celda-acciones">
+                <button class="action-button" *ngIf="cochera.deshabilitada" (click)="habilitarCochera(cochera.id)">
+                  <img src="/IMG/boton-habilitar.png" alt="Habilitar">
+                </button>
+                <button class="action-button" *ngIf="!cochera.deshabilitada && !cochera.activo" (click)="deshabilitarCochera(cochera.id)">
+                  <img src="/IMG/boton-cambiar-disponibilidad.png" alt="Deshabilitar">
+                </button>
+                <button class="action-button" *ngIf="esAdmin" (click)="abrirModalEliminarCochera(cochera.id)">
+                  <img src="/IMG/boton-eliminar.png" alt="Eliminar">
+                </button>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="boton-agregar">
+      <button (click)="agregarFila()" class="boton-resaltado" id="agregar"><img src="/IMG/boton-agregar-cochera.png" alt="agregar-fila" width="50"></button>
+    </div>
+  </main>
+</div>

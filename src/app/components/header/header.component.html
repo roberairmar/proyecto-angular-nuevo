@@ -1,0 +1,10 @@
+<header id="header">
+    <h1>{{ titulo() }}</h1>
+    <nav class="user-actions">
+      <a [routerLink]="['/reportes']" routerLinkActive="activa">👤 Reportes</a>
+      <a [routerLink]="['/login']" routerLinkActive="activa">Cerrar sesión</a>
+      <a routerLink="/reportes" routerLinkActive="activa">Precios</a>
+      <a [routerLink]="['/estado-cocheras']" routerLinkActive="activa">Estado Cocheras</a>
+    </nav>
+    <img src="/IMG/Logo-Parking.png" alt="Parking App" class="parking-logo">
+  </header>

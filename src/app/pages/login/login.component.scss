@@ -1,0 +1,76 @@
+#login-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+
+  #izquierda {
+    flex: 1;
+    background-color: #008000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .parking-logo-login {
+      max-width: 70%;
+    }
+  }
+
+  #derecha {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #login-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      max-width: 400px;
+
+      .form-group {
+        width: 100%;
+        margin-bottom: 20px;
+
+        input {
+          width: 100%;
+          padding: 12px 20px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          font-size: 16px;
+        }
+      }
+
+      .login-button {
+        background-color: #008000;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+      }
+
+      .register-link {
+        color: #008000;
+        margin-top: 10px;
+        text-decoration: none;
+      }
+    }
+
+    #triangulos {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 30%;
+
+      .triangulos-image {
+        width: 100%;
+      }
+    }
+  }
+}
